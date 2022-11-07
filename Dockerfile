@@ -12,4 +12,4 @@ RUN npm install
 COPY ./src ./src
 COPY public public
 
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "build" ]
