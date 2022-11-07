@@ -28,22 +28,27 @@ export default function Navbar({darkMode, handleClick}) {
     const [active, setActive] = useState(location.pathname === '/' ? 'home' : location.pathname.slice(1, location.pathname.length));
 
     return (
-        <Box component={'nav'} width={'100%'}>
-            <Box component={'ul'} display={'flex'} justifyContent={'center'} alignItems={'center'}
-                 gap={{xs: '2rem', md: '8rem'}}
-                 textTransform={'lowercase'} fontSize={'1rem'}>
+        <Box component={'nav'} width={'100%'} display={'flex'} justifyContent={'space-between'}>
+            <Box component={'ul'} padding={'10px'} width={'45%'}
+                gap={{ xs: '2rem', md: '8rem' }}
+                textTransform={'lowercase'} fontSize={'1rem'} display={'flex'} justifyContent={'flex-start'} alignItems={'center'}>
                 {links.map((link, index) => (
-                    <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
-                         sx={{borderImageSource: info.gradient}}>
+                    <Box key={index} className={(link.active === active && !link.type) && Style.active}
+                        sx={{ borderImageSource: info.gradient }}>
                         <Link to={link.to} onClick={() => setActive(link.active)}>
-                            {!link.type && <p style={{paddingBottom: '0.5rem'}}>{link.name}</p>}
+                            {!link.type && <p style={{ paddingBottom: '0.5rem' }}>{link.name}</p>}
                             {link.type && <h1>{link.name}</h1>}
                         </Link>
                     </Box>
                 ))}
-                <li>
-                    <Toggler darkMode={darkMode} handleClick={handleClick}/>
-                </li>
+            </Box>
+            <Box className='initials' sx={{ borderImageSource: info.gradient }} padding={'10px'} width={'10%'} alignItems={'center'}>
+                <Link to={'/'} onClick={() => setActive('home')}>
+                    <h1>{info.initials}</h1>
+                </Link>
+            </Box>
+            <Box className={Style.toggler} padding={'10px'} width={'45%'} display={'flex'} justifyContent={'flex-end'} alignItems={'center'}>
+                <Toggler darkMode={darkMode} handleClick={handleClick} />
             </Box>
         </Box>
     )
