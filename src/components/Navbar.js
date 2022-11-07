@@ -42,7 +42,7 @@ export default function Navbar({darkMode, handleClick}) {
                     </Box>
                 ))}
             </Box>
-            <Box className='initials' sx={{ borderImageSource: info.gradient }} padding={'10px'} width={'10%'} alignItems={'center'}>
+            <Box className='initials' sx={{ borderImageSource: info.gradient }} padding={'10px'} width={'10%'} alignItems={'center'} textTransform={'lowercase'}>
                 <Link to={'/'} onClick={() => setActive('home')}>
                     <h1>{info.initials}</h1>
                 </Link>
