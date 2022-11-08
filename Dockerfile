@@ -12,4 +12,8 @@ RUN npm install
 COPY ./src ./src
 COPY public public
 
-CMD [ "npm", "run", "build" ]
+RUN npm run build
+
+RUN npm install -g serve
+
+CMD [ "serve", "-s", "build" ]
