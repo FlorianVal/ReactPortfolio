@@ -1,12 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Style from './About.module.scss';
 import Terminal from "./Terminal";
 import {Box} from "@mui/material";
 import {info} from "../../resources/info/Info";
+import { Document, pdfjs, Page } from 'react-pdf'
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.js',
+  import.meta.url,
+).toString();
 
 export default function About() {
     const firstName = info.firstName.toLowerCase()
+    const [numPages, setNumPages] = useState(1);
+    const [pageNumber, setPageNumber] = useState(1);
+
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+    }
 
     function aboutMeText() {
         return <>
@@ -52,9 +65,12 @@ export default function About() {
 
     return (
         <Box display={'flex'} flexDirection={'column'} alignItems={'center'} mt={'3rem'}>
-            <Terminal text={aboutMeText()}/>
-            <Terminal text={skillsText()}/>
-            <Terminal text={miscText()}/>
+            <Document file="main.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+                <Page pageNumber={pageNumber} />
+            </Document>
+            <p>
+                Page {pageNumber} of {numPages}
+            </p>
         </Box>
     )
 }
