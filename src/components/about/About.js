@@ -7,11 +7,16 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = "./pdf.worker.js";
 
 export default function About() {
-  const [numPages, setNumPages] = useState(1);
+  const [numPagesEn, setNumPagesEn] = useState(1);
+  const [numPagesFr, setNumPagesFr] = useState(1);
   const [pageNumber] = useState(1);
 
   function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
+    if (documentName === "main_en.pdf") {
+      setNumPagesEn(numPages);
+    } else if (documentName === "main_fr.pdf") {
+      setNumPagesFr(numPages);
+    }
   }
 
   return (
@@ -21,11 +26,17 @@ export default function About() {
       alignItems={"center"}
       mt={"3rem"}
     >
-      <Document file="main.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+      <Document file="main_en.pdf" onLoadSuccess={onDocumentLoadSuccess}>
         <Page pageNumber={pageNumber} />
       </Document>
       <p>
-        Page {pageNumber} of {numPages}
+        Page {pageNumber} of {numPagesEn}
+      </p>
+      <Document file="main_fr.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+        <Page pageNumber={pageNumber} />
+      </Document>
+      <p>
+        Page {pageNumber} of {numPagesFr}
       </p>
     </Box>
   );
