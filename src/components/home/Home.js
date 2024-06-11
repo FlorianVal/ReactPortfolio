@@ -4,6 +4,7 @@ import me from '../../resources/img/self.png';
 import classNames from 'classnames';
 import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
+import SocialIconSvg from "./SocialIconSvg";
 import {Box} from "@mui/material";
 import {info} from "../../resources/info/Info";
 
@@ -24,9 +25,11 @@ export default function Home() {
                   <EmojiBullet key={index} emoji={bio.emoji} text={bio.text}/>
                ))}
             </Box>
-            <Box display={'flex'} gap={'1.5rem'} justifyContent={'center'} fontSize={{xs: '2rem', md: '2.5rem'}}>
+            <Box display={'flex'} gap={'1.5rem'} justifyContent={'center'} alignItems={'center'}>
                {info.socials.map((social, index) => (
-                  <SocialIcon key={index} link={social.link} icon={social.icon} label={social.label} />
+                  'icon' in social ?
+                  <SocialIcon key={index} link={social.link} icon={social.icon} label={social.label} /> :
+                  <SocialIconSvg key={index} link={social.link} iconPath={social.path} label={social.label} />
                ))}
             </Box>
          </Box>

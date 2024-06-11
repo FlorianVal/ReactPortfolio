@@ -54,6 +54,11 @@ export const info = {
             link: "https://twitter.com/FloValade",
             icon: "fa fa-twitter",
             label: 'twitter'
+        },
+        {
+            link: "https://huggingface.co/valcore",
+            path: "hf-logo.svg",
+            label: 'huggingface'
         }
         // Feel free to remove any of these that you don't have. I'll write an FAQ on how to add new ones later, let me know if you have a request for an icon!
         // Just change the links so that they lead to your social profiles.

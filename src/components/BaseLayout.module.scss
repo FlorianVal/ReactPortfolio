@@ -19,6 +19,10 @@ footer {
     transition: color 400ms;
   }
 
+  i {
+    font-size: 40px;
+  }
+
   a:visited {
     color: $white;
   }
@@ -32,6 +36,10 @@ footer {
   background-color: $white;
   color: $dark;
   transition: all 400ms;
+
+  i {
+    font-size: 40px;
+  }
 }
 
 
