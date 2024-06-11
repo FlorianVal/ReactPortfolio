@@ -10,6 +10,10 @@ footer {
   color: $white;
   transition: all 400ms;
 
+  button {
+    color: $white;
+  }
+
   a, i, li {
     color: $white;
     transition: color 400ms;
