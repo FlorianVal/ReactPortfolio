@@ -15,12 +15,12 @@ const links = [
         name: 'Curriculum Vitae',
         to: '/about',
         active: 'about'
-    }/*,
+    },
     {
-        name: 'Portfolio',
+        name: 'Demo',
         to: '/portfolio',
         active: 'portfolio'
-    }*/
+    }
 ]
 
 export default function Navbar({darkMode, handleClick}) {

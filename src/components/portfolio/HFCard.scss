@@ -1,0 +1,102 @@
+// HFCard.scss
+
+.hf-card {
+  position: relative;
+
+  &__inner {
+    position: relative;
+    z-index: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.25rem; // p-9
+    background-image: linear-gradient(to bottom right, #9333ea, #db2777); // from-purple-600 to-pink-600
+    overflow: hidden;
+    height: 11rem; // h-44
+    border-radius: 0.75rem; // rounded-xl
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1.1); // hover:brightness-110
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 6rem; // h-24
+    width: 50%; // w-1/2
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), transparent, transparent);
+  }
+
+  &__badge {
+    position: absolute;
+    right: 4rem; // right-16
+    top: 0.75rem; // top-3
+    left: 0.75rem; // left-3
+    display: flex;
+    flex-wrap: wrap;
+    content: flex-start;
+    gap: 0.25rem; // gap-1
+    overflow: hidden;
+    font-size: 0.75rem; // text-xs
+
+    &-inner {
+      display: inline-flex;
+      cursor: pointer;
+      user-select: none;
+      align-items: center;
+      overflow: hidden;
+      font-family: monospace;
+      border-radius: 0.25rem; // rounded
+      border: 1px solid rgba(255, 255, 255, 0.05); // !border-white/5
+      background-color: rgba(255, 255, 255, 0.1); // bg-white/10
+      line-height: 1.25; // leading-tight
+      color: white;
+      opacity: 0.8;
+
+      &-text {
+        display: inline-flex;
+        align-items: center;
+        padding: 0 0.25rem; // px-1 py-0
+
+        span {
+          margin: 0 0.25rem; // mx-1
+
+          &.platform {
+            transform: skew(-6deg); // -skew-x-6
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  &__emoji {
+    position: absolute;
+    opacity: 0.6;
+    font-size: 4.5rem; // text-7xl
+    margin-bottom: 0.5rem; // mb-2
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25)); // drop-shadow-xl
+  }
+
+  &__title {
+    z-index: 40;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.25; // leading-tight
+    color: #eff6ff; // text-blue-50
+    font-size: 1.5rem; // text-2xl
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  }
+}

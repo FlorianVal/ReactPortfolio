@@ -1,16 +1,29 @@
 import React from 'react';
-import PortfolioBlock from "./PortfolioBlock";
-import {Box, Grid} from "@mui/material";
-import {info} from "../../resources/info/Info";
+import PortfolioBlock from './PortfolioBlock'
+import EmbedBlock from './EmbedBlock';
+import { Box, Grid } from "@mui/material";
+import { info } from "../../resources/info/Info";
 
 export default function Portfolio() {
     return (
         <Box>
-            <Grid container display={'flex'} justifyContent={'center'}>
+            <Grid container display={'block'} justifyContent={'center'}>
                 {info.portfolio.map((project, index) => (
-                   <Grid item xs={12} md={6} key={index}>
-                       <PortfolioBlock image={project.image} live={project.live} source={project.source} title={project.title} />
-                   </Grid>
+                    <Grid item key={index}>
+                        {project.type === 'standard' ? (
+                            <PortfolioBlock
+                                image={project.image}
+                                live={project.live}
+                                source={project.source}
+                                title={project.title}
+                            />
+                        ) : (
+                            <EmbedBlock
+                                url={project.url}
+                                title={project.title}
+                            />
+                        )}
+                    </Grid>
                 ))}
             </Grid>
         </Box>

@@ -92,6 +92,10 @@ export const info = {
         // You can also remove the emojis if you'd like, I just think they look cute :P
     ],
     portfolio: [ // This is where your portfolio projects will be detailed
+        {
+            title: "Branchy Phi-2",
+            url: "https://valcore-branchy-phi-2.hf.space"
+        },
         /*{
             title: "Project 1",
             live: "https://paytonpierce.dev", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
