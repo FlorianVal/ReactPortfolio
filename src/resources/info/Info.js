@@ -37,6 +37,10 @@ export const info = {
         {
             emoji: "📧",
             text: "florian_val@outlook.fr"
+        },
+        {
+            emoji: "📧",
+            text: "florian.valade@univ-eiffel.fr"
         }
     ],
     socials: [
