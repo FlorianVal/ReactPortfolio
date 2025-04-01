@@ -24,7 +24,7 @@ export default function Navbar({darkMode, handleClick}) {
 
     return (
         <Box component={'nav'} width={'100%'}>
-            <Box component={'ul'} display={'flex'} justifyContent={'space-between'} alignItems={'center'}
+            <Box component={'ul'} display={'flex'} justifyContent={'center'} alignItems={'center'}
                  gap={{xs: '2rem', md: '8rem'}}
                  fontSize={'1rem'}>
                 <Box component={'li'} className={(links[0].active === active && !links[0].type) && Style.active}
@@ -46,7 +46,7 @@ export default function Navbar({darkMode, handleClick}) {
                         {links[1].type && <h1>{links[1].name}</h1>}
                     </Link>
                 </Box>
-                <li>
+                <li style={{marginLeft: 'auto'}}>
                     <Toggler darkMode={darkMode} handleClick={handleClick}/>
                 </li>
             </Box>
