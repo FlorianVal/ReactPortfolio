@@ -6,15 +6,16 @@ import {Box} from "@mui/material";
 import {info} from "../resources/info/Info";
 
 const links = [
-    /*{
-        name: 'Home',
-        to: '/',
-        active: 'home'
-    },*/
     {
         name: 'Curriculum Vitae',
         to: '/about',
         active: 'about'
+    },
+    {
+        name: 'FV',
+        to: '/',
+        active: 'home',
+        type: 'initials'
     },
     {
         name: 'Demo',
@@ -29,24 +30,19 @@ export default function Navbar({darkMode, handleClick}) {
 
     return (
         <Box component={'nav'} width={'100%'}>
-            <Box component={'ul'} display={'flex'} justifyContent={'center'} alignItems={'center'}
+            <Box component={'ul'} display={'flex'} justifyContent={'space-between'} alignItems={'center'}
                  gap={{xs: '2rem', md: '8rem'}}
                  fontSize={'1rem'}>
                 {links.map((link, index) => (
-                    <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
+                    <Box component={'li'} key={index} className={(link.active === active && !link.type) && Style.active}
                          sx={{borderImageSource: info.gradient}}>
-                        <Link to={link.to} onClick={() => setActive(link.active)} className={Style.link}>
+                        <Link to={link.to} onClick={() => setActive(link.active)} className={link.type ? Style.initials : Style.link}>
                             {!link.type && <p style={{padding: '0.5rem 0'}}>{link.name}</p>}
                             {link.type && <h1>{link.name}</h1>}
                         </Link>
                     </Box>
                 ))}
-                <Box className='initials' sx={{ borderImageSource: info.gradient }} padding={'10px'} width={'10%'} alignItems={'center'} textTransform={'lowercase'}>
-                    <Link to={'/'} onClick={() => setActive('home')}>
-                        <h1>{info.initials}</h1>
-                    </Link>
-                </Box>
-                <li>
+                <li className={Style.toggler}>
                     <Toggler darkMode={darkMode} handleClick={handleClick}/>
                 </li>
             </Box>
