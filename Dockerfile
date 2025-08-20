@@ -1,4 +1,4 @@
-FROM node:fermium-alpine
+FROM node:jod-alpine
 
 # Create app directory
 WORKDIR /app
