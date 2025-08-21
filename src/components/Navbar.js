@@ -18,6 +18,11 @@ const rightLinks = [
         name: 'Demo',
         to: '/portfolio',
         active: 'portfolio'
+    },
+    {
+        name: 'Tools',
+        to: '/tools',
+        active: 'tools'
     }
 ];
 
