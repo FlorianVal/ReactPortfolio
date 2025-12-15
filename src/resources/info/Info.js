@@ -98,7 +98,8 @@ export const info = {
     portfolio: [ // This is where your portfolio projects will be detailed
         {
             title: "Branchy Phi-2",
-            url: "https://valcore-branchy-phi-2.hf.space"
+            url: "https://huggingface.co/spaces/valcore/Branchy-phi-2",
+            type: "hf-link"
         },
         /*{
             title: "Project 1",
