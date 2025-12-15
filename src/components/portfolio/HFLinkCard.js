@@ -6,7 +6,7 @@ function HFLinkCard({ url, title }) {
     return (
         <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center"
             borderRadius="0.5rem" mb="4rem" mt="2rem">
-            <div className="p-4 w-full max-w-md">
+            <Box sx={{ padding: '1rem', width: '100%', maxWidth: 'md' }}>
                 <a 
                     href={url} 
                     target="_blank" 
@@ -15,7 +15,7 @@ function HFLinkCard({ url, title }) {
                 >
                     <HFCard title={title} emoji="⚡" />
                 </a>
-            </div>
+            </Box>
         </Box>
     );
 }
