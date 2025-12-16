@@ -1,0 +1,24 @@
+
+import React from 'react';
+import { Box } from "@mui/material";
+import PlatformCard from './PlatformCard';
+
+function PlatformLinkCard({ url, title, platformName, emoji }) {
+    return (
+        <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center"
+            borderRadius="0.5rem" mb="4rem" mt="2rem">
+            <Box sx={{ padding: '1rem', width: '100%', maxWidth: 'md' }}>
+                <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none' }}
+                >
+                    <PlatformCard title={title} emoji={emoji} platformName={platformName} />
+                </a>
+            </Box>
+        </Box>
+    );
+}
+
+export default PlatformLinkCard;

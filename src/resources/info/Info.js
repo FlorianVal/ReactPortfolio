@@ -101,6 +101,13 @@ export const info = {
             url: "https://huggingface.co/spaces/valcore/Branchy-phi-2",
             type: "hf-link"
         },
+        {
+            title: "VisioFlow",
+            url: "https://visioflow.fvalade.fr",
+            type: "custom-link",
+            platformName: "VisioFlow",
+            emoji: "🖼️"
+        },
         /*{
             title: "Project 1",
             live: "https://paytonpierce.dev", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.

@@ -2,6 +2,7 @@ import React from 'react';
 import PortfolioBlock from './PortfolioBlock'
 import EmbedBlock from './EmbedBlock';
 import HFLinkCard from './HFLinkCard';
+import PlatformLinkCard from './PlatformLinkCard';
 import { Box, Grid } from "@mui/material";
 import { info } from "../../resources/info/Info";
 
@@ -22,6 +23,13 @@ export default function Portfolio() {
                             <HFLinkCard
                                 url={project.url}
                                 title={project.title}
+                            />
+                        ) : project.type === 'custom-link' ? (
+                            <PlatformLinkCard
+                                url={project.url}
+                                title={project.title}
+                                platformName={project.platformName}
+                                emoji={project.emoji}
                             />
                         ) : (
                             <EmbedBlock
