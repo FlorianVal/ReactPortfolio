@@ -138,5 +138,11 @@ export const info = {
             source: "https://github.com/paytonjewell",
             image: mock5
         }*/
+    ],
+    tools: [
+        {
+            title: "Bib Check",
+            url: "https://bib-check.vercel.app/"
+        }
     ]
 }
