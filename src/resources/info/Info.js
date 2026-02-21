@@ -63,10 +63,12 @@ export const info = {
             link: "https://huggingface.co/valcore",
             path: "hf-logo.svg",
             label: 'huggingface'
+        },
+        {
+            link: "https://scholar.google.com/citations?user=-8nBNzIAAAAJ",
+            icon: "fa fa-graduation-cap",
+            label: 'google scholar'
         }
-        // Feel free to remove any of these that you don't have. I'll write an FAQ on how to add new ones later, let me know if you have a request for an icon!
-        // Just change the links so that they lead to your social profiles.
-
     ],
     bio: "Hello! I'm Florian. I'm an AI Research Engineer at Fujitsu in Paris, where I develop and adapt large language models for various applications. I recently completed my PhD in AI at Université Gustave Eiffel, focusing on efficient deep learning — adaptive inference, early exits, and compute-efficient Transformers. I've trained GPT-style models up to 1.3B parameters on multi-GPU clusters and published at UAI 2025. I'm passionate about making deep learning faster, cheaper, and more practical.",
     skills:
@@ -75,26 +77,7 @@ export const info = {
         exposedTo: ['jax', 'mlx', 'tensorflow', 'kubernetes', 'javascript', 'react']
     }
     ,
-    hobbies: [
-        {
-            label: 'reading',
-            emoji: '📖'
-        },
-        {
-            label: 'theater',
-            emoji: '🎭'
-        },
-        {
-            label: 'movies',
-            emoji: '🎥'
-        },
-        {
-            label: 'cooking',
-            emoji: '🌶'
-        }
-        // Same as above, change the emojis to match / relate to your hobbies or interests.
-        // You can also remove the emojis if you'd like, I just think they look cute :P
-    ],
+    hobbies: [],
     portfolio: [
         {
             title: "EERO: Early Exit with Reject Option (UAI 2025)",

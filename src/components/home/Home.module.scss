@@ -47,3 +47,14 @@ a:hover {
   60% { transform: rotate( 0.0deg) }
   100% { transform: rotate( 0.0deg) }
 }
+
+.skills {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+
+  li {
+    margin: 0.25rem 0;
+    line-height: 1.75;
+    font-size: 1.1rem;
+  }
+}

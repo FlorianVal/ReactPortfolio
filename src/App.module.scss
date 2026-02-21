@@ -10,6 +10,7 @@ body {
     color: $dark;
     background-color: $white;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 li {

@@ -19,3 +19,14 @@
     line-height: 1.75;
   }
 }
+
+/* Ensure PDF canvas never overflows viewport */
+:global(.react-pdf__Page) {
+  max-width: 100%;
+  overflow: hidden;
+
+  canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
