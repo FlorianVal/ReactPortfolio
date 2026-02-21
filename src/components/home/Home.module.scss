@@ -18,7 +18,6 @@ h2 {
   }
 }
 
-
 .hand {
   animation-name: wave;
   animation-duration: 2.5s;
@@ -48,13 +47,51 @@ a:hover {
   100% { transform: rotate( 0.0deg) }
 }
 
-.skills {
-  list-style-type: disc;
-  padding-left: 1.5rem;
+/* About / Bio section */
+.aboutSection {
+  text-align: center;
+}
 
-  li {
-    margin: 0.25rem 0;
-    line-height: 1.75;
-    font-size: 1.1rem;
+.bioCard {
+  background: rgba(141, 83, 255, 0.06);
+  border: 1px solid rgba(141, 83, 255, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.bioText {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin: 0;
+
+  @media only screen and (min-width: 940px) {
+    font-size: 1.25rem;
   }
+}
+
+/* Skills section */
+.skillsTitle {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.skillsSubtitle {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.5;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.chipPrimary {
+  transition: all 200ms ease;
+  cursor: default;
+}
+
+.chipSecondary {
+  transition: all 200ms ease;
+  cursor: default;
 }
