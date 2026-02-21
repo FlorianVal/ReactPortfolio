@@ -37,6 +37,9 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "overrides": {
+    "canvas": "npm:empty-npm-package@1.0.0"
+  },
   "browserslist": {
     "production": [
       ">0.2%",

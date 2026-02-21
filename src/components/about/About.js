@@ -61,7 +61,6 @@ export default function About() {
     saveAs(fileUrl, fileName);
   };
 
-  const fileUrl = value === 0 ? "main_en.pdf" : "main_fr.pdf";
   // Limit PDF width: use container width but cap at 800px
   const pdfWidth = containerWidth ? Math.min(containerWidth - 32, 800) : 700;
 
