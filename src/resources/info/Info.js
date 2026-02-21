@@ -21,26 +21,26 @@ export const info = {
     firstName: "Florian",
     lastName: "Valade",
     initials: "FV", // the example uses first and last, but feel free to use three or more if you like.
-    position: "a PhD student in artificial intelligence",
+    position: "an AI Research Engineer",
     selfPortrait: self, // don't change this unless you want to name your self-portrait in the "img" folder something else!
     gradient: `-webkit-linear-gradient(135deg, ${colors})`, // don't change this either
     baseColor: colors[0],
-    miniBio: [ // these are just some "tidbits" about yourself. You can look at mine https://paytonjewell.github.io/#/ for an example if you'd like
+    miniBio: [
         {
             emoji: '🌎',
-            text: 'based in France'
+            text: 'based in Paris, France'
+        },
+        {
+            emoji: "💼",
+            text: "AI Research Engineer at Fujitsu"
         },
         {
             emoji: "🎓",
-            text: "PhD student in University of Marne-la-Vallée"
+            text: "PhD in AI · Université Gustave Eiffel (2026)"
         },
         {
             emoji: "📧",
             text: "florian_val@outlook.fr"
-        },
-        {
-            emoji: "📧",
-            text: "florian.valade@univ-eiffel.fr"
         }
     ],
     socials: [
@@ -68,11 +68,11 @@ export const info = {
         // Just change the links so that they lead to your social profiles.
 
     ],
-    bio: "Hello! I'm John. I'm a systems engineer for Google. I studied CompSci at Harvard, I enjoy long walks on the beach, and I believe artificial intelligence will inevitably rule us all one day. You should hire me!",
+    bio: "Hello! I'm Florian. I'm an AI Research Engineer at Fujitsu in Paris, where I develop and adapt large language models for various applications. I recently completed my PhD in AI at Université Gustave Eiffel, focusing on efficient deep learning — adaptive inference, early exits, and compute-efficient Transformers. I've trained GPT-style models up to 1.3B parameters on multi-GPU clusters and published at UAI 2025. I'm passionate about making deep learning faster, cheaper, and more practical.",
     skills:
     {
-        proficientWith: ['javascript', 'react', 'git', 'github', 'bootstrap', 'html5', 'css3', 'figma'],
-        exposedTo: ['nodejs', 'python', 'adobe illustrator']
+        proficientWith: ['python', 'pytorch', 'transformers', 'huggingface', 'distributed training (FSDP/DDP)', 'LLMs', 'git', 'docker'],
+        exposedTo: ['jax', 'mlx', 'tensorflow', 'kubernetes', 'javascript', 'react']
     }
     ,
     hobbies: [
@@ -95,48 +95,39 @@ export const info = {
         // Same as above, change the emojis to match / relate to your hobbies or interests.
         // You can also remove the emojis if you'd like, I just think they look cute :P
     ],
-    portfolio: [ // This is where your portfolio projects will be detailed
+    portfolio: [
         {
-            title: "Branchy Phi-2",
+            title: "EERO: Early Exit with Reject Option (UAI 2025)",
+            url: "https://github.com/FlorianVal",
+            type: "custom-link",
+            platformName: "Research Paper",
+            emoji: "📄"
+        },
+        {
+            title: "Branchy Phi-2 — Early Exit LLM Demo",
             url: "https://huggingface.co/spaces/valcore/Branchy-phi-2",
             type: "hf-link"
         },
         {
-            title: "VisioFlow",
+            title: "Recursive GPT — Scaling Laws of Recursive Transformers",
+            url: "https://github.com/FlorianVal",
+            type: "custom-link",
+            platformName: "Research Project",
+            emoji: "🔁"
+        },
+        {
+            title: "VisioFlow — Computer Vision Flow Builder",
             url: "https://visioflow.fvalade.fr",
             type: "custom-link",
             platformName: "VisioFlow",
             emoji: "🖼️"
         },
-        /*{
-            title: "Project 1",
-            live: "https://paytonpierce.dev", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
-            source: "https://github.com/paytonjewell", // this should be a link to the **repository** of the project, where the code is hosted.
-            image: mock1
-        },
         {
-            title: "Project 2",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock2
-        },
-        {
-            title: "Project 3",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock3
-        },
-        {
-            title: "Project 4",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock4
-        },
-        {
-            title: "Project 5",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock5
-        }*/
+            title: "NLP & CV Course Materials",
+            url: "https://github.com/FlorianVal/nlp-cv-materials",
+            type: "custom-link",
+            platformName: "GitHub",
+            emoji: "📚"
+        }
     ]
 }
