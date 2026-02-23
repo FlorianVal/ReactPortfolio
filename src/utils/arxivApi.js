@@ -12,7 +12,7 @@ const parseArxivEntries = (xmlText) => {
 
         let url = idNode || '';
         if (url) {
-            url = url.replace('http://', 'https://').split('v')[0];
+            url = url.replace('http://', 'https://').replace(/v\d+$/, '');
         }
         const arxivId = url.split('/').pop();
 
