@@ -33,9 +33,8 @@ export default function Chatbot({ darkMode }) {
         setInput("");
         setIsLoading(true);
 
-        // Prepare API messages (exclude the initial greeting)
+        // Prepare API messages (including the initial greeting for context)
         const apiMessages = newMessages
-            .filter((_, i) => i !== 0)
             .map((m) => ({ role: m.role, content: m.content }));
 
         try {
