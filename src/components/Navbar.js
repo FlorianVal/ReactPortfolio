@@ -15,7 +15,7 @@ const leftLinks = [
 
 const rightLinks = [
     {
-        name: 'Demo',
+        name: 'Projets',
         to: '/portfolio',
         active: 'portfolio'
     }
@@ -90,11 +90,11 @@ export default function Navbar({ darkMode, handleClick }) {
                         component={'li'} // Treat initials as a list item for structure
                         className={active === 'home' ? Style.active : ""} // Check if 'home' is active
                         sx={{
-                             borderImageSource: info.gradient,
-                             padding: 0,
-                             margin: 0,
-                             listStyle: 'none',
-                             // Optionally add specific styles for initials container if needed
+                            borderImageSource: info.gradient,
+                            padding: 0,
+                            margin: 0,
+                            listStyle: 'none',
+                            // Optionally add specific styles for initials container if needed
                         }}
                         padding={'0 10px'} // Adjust padding around initials if needed
                         alignItems={'center'}

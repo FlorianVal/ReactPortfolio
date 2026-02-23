@@ -80,6 +80,7 @@ export const info = {
     hobbies: [],
     portfolio: [
         {
+            category: "papier",
             title: "EERO: Early Exit with Reject Option (UAI 2025)",
             url: "https://arxiv.org/abs/2402.03779",
             type: "custom-link",
@@ -87,25 +88,29 @@ export const info = {
             emoji: "📄"
         },
         {
+            category: "demo",
             title: "Branchy Phi-2 — Early Exit LLM Demo",
             url: "https://huggingface.co/spaces/valcore/Branchy-phi-2",
             type: "hf-link"
         },
         {
-            title: "Recursive GPT — Scaling Laws of Recursive Transformers",
-            url: "https://github.com/FlorianVal/RecursiveNanoGPT",
-            type: "custom-link",
-            platformName: "Research Project",
-            emoji: "🔁"
-        },
-        {
+            category: "demo",
             title: "VisioFlow — Computer Vision Flow Builder",
             url: "https://visioflow.fvalade.fr",
             type: "custom-link",
             platformName: "VisioFlow",
-            emoji: "🖼️"
+            emoji: "�️"
         },
         {
+            category: "code",
+            title: "Recursive GPT — Scaling Laws of Recursive Transformers",
+            url: "https://github.com/FlorianVal/RecursiveNanoGPT",
+            type: "custom-link",
+            platformName: "Research Project",
+            emoji: "�"
+        },
+        {
+            category: "code",
             title: "NLP & CV Course Materials",
             url: "https://github.com/FlorianVal/nlp-cv-materials",
             type: "custom-link",
