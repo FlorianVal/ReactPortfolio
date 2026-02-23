@@ -99,7 +99,7 @@ export const info = {
             url: "https://visioflow.fvalade.fr",
             type: "custom-link",
             platformName: "VisioFlow",
-            emoji: "�️"
+            emoji: "🖼"
         },
         {
             category: "code",
@@ -107,7 +107,7 @@ export const info = {
             url: "https://github.com/FlorianVal/RecursiveNanoGPT",
             type: "custom-link",
             platformName: "Research Project",
-            emoji: "�"
+            emoji: "🔄"
         },
         {
             category: "code",
