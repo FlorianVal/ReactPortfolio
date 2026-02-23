@@ -36,7 +36,7 @@ export const info = {
         },
         {
             emoji: "🎓",
-            text: "PhD in AI · Université Gustave Eiffel (2026)"
+            text: "PhD in Mathematics · Université Gustave Eiffel (2026)"
         },
         {
             emoji: "📧",
@@ -70,7 +70,11 @@ export const info = {
             label: 'google scholar'
         }
     ],
-    bio: "Hello! I'm Florian. I'm an AI Research Engineer at Fujitsu in Paris, where I develop and adapt large language models for various applications. I recently completed my PhD in AI at Université Gustave Eiffel, focusing on efficient deep learning — adaptive inference, early exits, and compute-efficient Transformers. I've trained GPT-style models up to 1.3B parameters on multi-GPU clusters and published at UAI 2025. I'm passionate about making deep learning faster, cheaper, and more practical.",
+    bio: `Hello! I'm Florian. I'm an AI Research Engineer at Fujitsu in Paris, where I develop and adapt large language models for various applications.
+
+I recently completed my PhD in Mathematics at Université Gustave Eiffel, focusing on efficient deep learning — adaptive inference, early exits, and compute-efficient Transformers.
+
+I'm passionate about making deep learning faster, cheaper, and more practical.`,
     skills:
     {
         proficientWith: ['python', 'pytorch', 'transformers', 'huggingface', 'distributed training (FSDP/DDP)', 'LLMs', 'git', 'docker'],
