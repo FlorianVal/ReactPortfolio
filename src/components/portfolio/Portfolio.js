@@ -1,20 +1,59 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PortfolioBlock from './PortfolioBlock'
 import EmbedBlock from './EmbedBlock';
-import { Box, Typography, Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { Box, Typography, Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemButton, ListItemIcon, ListItemText, CircularProgress } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { info } from "../../resources/info/Info";
+import { fetchArxivPapers, getCachedArxivPapers } from '../../utils/arxivApi';
+
+const extractIdFromUrl = (url) => {
+    if (!url) return '';
+    const parts = url.split('/');
+    return parts[parts.length - 1].replace(/\.pdf$/, '').split('v')[0];
+};
+
+const mergePapers = (arxivPapers) => {
+    const staticPapers = info.portfolio.filter(p => p.category === 'papier');
+    const staticIds = new Set(staticPapers.map(p => extractIdFromUrl(p.url)));
+    const newArxivPapers = arxivPapers.filter(p => !staticIds.has(p.arxivId));
+    return [...staticPapers, ...newArxivPapers];
+};
 
 export default function Portfolio() {
 
     const [expanded, setExpanded] = useState({});
+    const [refreshing, setRefreshing] = useState(false);
+
+    // Initialize immediately with static + cached data
+    const [papers, setPapers] = useState(() => mergePapers(getCachedArxivPapers()));
 
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(prev => ({ ...prev, [panel]: isExpanded }));
     };
 
-    const papers = info.portfolio.filter(p => p.category === 'papier');
+    // Then fetch fresh data from Arxiv in the background
+    useEffect(() => {
+        let isMounted = true;
+        const refreshPapers = async () => {
+            setRefreshing(true);
+            try {
+                const arxivPapers = await fetchArxivPapers();
+                if (isMounted) {
+                    setPapers(mergePapers(arxivPapers));
+                }
+            } catch (e) {
+                console.warn("Could not refresh papers from Arxiv, using cached data.", e);
+            } finally {
+                if (isMounted) {
+                    setRefreshing(false);
+                }
+            }
+        };
+        refreshPapers();
+        return () => { isMounted = false; };
+    }, []);
+
     const codeProjects = info.portfolio.filter(p => p.category === 'code');
     const demos = info.portfolio.filter(p => p.category === 'demo');
 
@@ -153,8 +192,8 @@ export default function Portfolio() {
         </Box>
     );
 
-    const SectionAccordion = ({ id, title, emoji, projects, renderFn }) => {
-        if (!projects || projects.length === 0) return null;
+    const SectionAccordion = ({ id, title, emoji, projects, renderFn, isLoading }) => {
+        if ((!projects || projects.length === 0) && !isLoading) return null;
 
         return (
             <Accordion
@@ -197,6 +236,11 @@ export default function Portfolio() {
                 </AccordionSummary>
                 <AccordionDetails sx={{ pt: 1, pb: 3, color: 'inherit' }}>
                     {renderFn(projects)}
+                    {isLoading && (
+                        <Box display="flex" justifyContent="center" py={1}>
+                            <CircularProgress size={18} color="inherit" sx={{ opacity: 0.4 }} />
+                        </Box>
+                    )}
                 </AccordionDetails>
             </Accordion>
         );
@@ -206,7 +250,7 @@ export default function Portfolio() {
         <Box display="flex" flexDirection="column" alignItems="center" mt="2rem" mb="4rem" width="100%"
             minHeight="calc(100vh - 175px)" sx={{ color: 'inherit' }}>
             <Box width="100%" maxWidth="800px" px={2}>
-                <SectionAccordion id="panel-papier" title="Recherche & Papiers" emoji="📄" projects={papers} renderFn={renderLinks} />
+                <SectionAccordion id="panel-papier" title="Recherche & Papiers" emoji="📄" projects={papers} renderFn={renderLinks} isLoading={refreshing} />
                 <SectionAccordion id="panel-code" title="Projets Open Source" emoji="💻" projects={codeProjects} renderFn={renderLinks} />
                 <SectionAccordion id="panel-demo" title="Démos Interactives" emoji="🚀" projects={demos} renderFn={renderCards} />
             </Box>

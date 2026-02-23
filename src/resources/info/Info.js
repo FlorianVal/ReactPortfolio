@@ -81,11 +81,11 @@ export const info = {
     portfolio: [
         {
             category: "papier",
-            title: "EERO: Early Exit with Reject Option (UAI 2025)",
-            url: "https://arxiv.org/abs/2402.03779",
+            title: "Adaptive Inference for Cost-Efficient Deep Neural Networks",
+            url: "https://hal.science/tel-05504891v1",
             type: "custom-link",
-            platformName: "Research Paper",
-            emoji: "📄"
+            platformName: "HAL Science",
+            emoji: "🎓"
         },
         {
             category: "demo",
