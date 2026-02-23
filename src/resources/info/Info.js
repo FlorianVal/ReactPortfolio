@@ -81,7 +81,7 @@ export const info = {
     portfolio: [
         {
             title: "EERO: Early Exit with Reject Option (UAI 2025)",
-            url: "https://github.com/FlorianVal",
+            url: "https://arxiv.org/abs/2402.03779",
             type: "custom-link",
             platformName: "Research Paper",
             emoji: "📄"
