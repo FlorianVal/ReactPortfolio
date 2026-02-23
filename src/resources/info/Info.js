@@ -93,7 +93,7 @@ export const info = {
         },
         {
             title: "Recursive GPT — Scaling Laws of Recursive Transformers",
-            url: "https://github.com/FlorianVal",
+            url: "https://github.com/FlorianVal/RecursiveNanoGPT",
             type: "custom-link",
             platformName: "Research Project",
             emoji: "🔁"
