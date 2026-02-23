@@ -9,7 +9,7 @@ import Chatbot from "./Chatbot";
 import { Box, Chip } from "@mui/material";
 import { info } from "../../resources/info/Info";
 
-export default function Home() {
+export default function Home({ darkMode }) {
 
    return (
       <Box component={'main'} display={'flex'} flexDirection={'column'} alignItems={'center'}
@@ -40,7 +40,7 @@ export default function Home() {
          </Box>
 
          {/* Chatbot section */}
-         <Chatbot />
+         <Chatbot darkMode={darkMode} />
 
          {/* About section */}
          <Box className={Style.aboutSection} width={{ xs: '90%', md: '60%' }} mt={'2rem'} mb={'2rem'}>

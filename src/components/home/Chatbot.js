@@ -7,7 +7,7 @@ const INITIAL_MESSAGE = {
     content: `Salut ! 👋 Je suis Florian. Pose-moi n'importe quelle question sur mon parcours, mes projets ou mes compétences !`,
 };
 
-export default function Chatbot() {
+export default function Chatbot({ darkMode }) {
     const [messages, setMessages] = useState([INITIAL_MESSAGE]);
     const [input, setInput] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -135,7 +135,7 @@ export default function Chatbot() {
     };
 
     return (
-        <div className={Style.chatSection}>
+        <div className={`${Style.chatSection} ${!darkMode ? Style.lightMode : ""}`}>
             <h3 className={Style.chatTitle}>
                 <span className={Style.chatTitleIcon}>💬</span> Discute avec moi
             </h3>

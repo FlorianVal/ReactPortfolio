@@ -50,7 +50,7 @@
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
 }
 
-:global(.light) .chatCard {
+.lightMode .chatCard {
     background: rgba(255, 255, 255, 0.85);
     border: 1px solid rgba(141, 83, 255, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -116,13 +116,13 @@
     }
 }
 
-:global(.light) .userMessage .messageBubble {
+.lightMode .userMessage .messageBubble {
     background: linear-gradient(135deg, rgba(0, 255, 164, 0.25), rgba(166, 104, 255, 0.25));
     border: 1px solid rgba(166, 104, 255, 0.3);
     color: #2b2b2b;
 }
 
-:global(.light) .botMessage .messageBubble {
+.lightMode .botMessage .messageBubble {
     background: rgba(141, 83, 255, 0.15);
     border: 1px solid rgba(141, 83, 255, 0.2);
     color: #2b2b2b;
@@ -215,7 +215,7 @@
     }
 }
 
-:global(.light) .chatInput {
+.lightMode .chatInput {
     background: rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(141, 83, 255, 0.25);
     color: #2b2b2b;
