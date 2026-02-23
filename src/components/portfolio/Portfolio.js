@@ -7,23 +7,23 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { info } from "../../resources/info/Info";
 import { fetchArxivPapers, getCachedArxivPapers } from '../../utils/arxivApi';
 
+const extractIdFromUrl = (url) => {
+    if (!url) return '';
+    const parts = url.split('/');
+    return parts[parts.length - 1].replace(/\.pdf$/, '').split('v')[0];
+};
+
+const mergePapers = (arxivPapers) => {
+    const staticPapers = info.portfolio.filter(p => p.category === 'papier');
+    const staticIds = new Set(staticPapers.map(p => extractIdFromUrl(p.url)));
+    const newArxivPapers = arxivPapers.filter(p => !staticIds.has(p.arxivId));
+    return [...staticPapers, ...newArxivPapers];
+};
+
 export default function Portfolio() {
 
     const [expanded, setExpanded] = useState({});
     const [refreshing, setRefreshing] = useState(false);
-
-    const extractIdFromUrl = (url) => {
-        if (!url) return '';
-        const parts = url.split('/');
-        return parts[parts.length - 1].replace(/\.pdf$/, '').split('v')[0];
-    };
-
-    const mergePapers = (arxivPapers) => {
-        const staticPapers = info.portfolio.filter(p => p.category === 'papier');
-        const staticIds = new Set(staticPapers.map(p => extractIdFromUrl(p.url)));
-        const newArxivPapers = arxivPapers.filter(p => !staticIds.has(p.arxivId));
-        return [...staticPapers, ...newArxivPapers];
-    };
 
     // Initialize immediately with static + cached data
     const [papers, setPapers] = useState(() => mergePapers(getCachedArxivPapers()));
