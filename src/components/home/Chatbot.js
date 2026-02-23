@@ -81,6 +81,7 @@ export default function Chatbot() {
                             }
                             if (parsed.content) {
                                 assistantContent += parsed.content;
+                                // eslint-disable-next-line no-loop-func
                                 setMessages((prev) => {
                                     const updated = [...prev];
                                     updated[updated.length - 1] = {
