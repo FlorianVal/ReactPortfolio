@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
 import SocialIconSvg from "./SocialIconSvg";
+import Chatbot from "./Chatbot";
 import { Box, Chip } from "@mui/material";
 import { info } from "../../resources/info/Info";
 
@@ -38,8 +39,11 @@ export default function Home() {
             </Box>
          </Box>
 
+         {/* Chatbot section */}
+         <Chatbot />
+
          {/* About section */}
-         <Box className={Style.aboutSection} width={{ xs: '90%', md: '60%' }} mt={'3rem'} mb={'2rem'}>
+         <Box className={Style.aboutSection} width={{ xs: '90%', md: '60%' }} mt={'2rem'} mb={'2rem'}>
             <Box className={Style.bioCard} p={{ xs: '1.5rem', md: '2rem' }} borderRadius={'1rem'}>
                <p className={Style.bioText}>{info.bio}</p>
             </Box>
