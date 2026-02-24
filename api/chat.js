@@ -92,7 +92,7 @@ export default async function handler(req, res) {
 
         // Log the interaction to Supabase
         const supabaseUrl = process.env.SUPABASE_URL;
-        const supabaseKey = process.env.SUPABASE_PUBLISHABLE_DEFAULT_KEY;
+        const supabaseKey = process.env.SUPABASE_PUBLISHABLE_KEY;
         if (supabaseUrl && supabaseKey && assistantContent) {
             try {
                 const userQuestion = recentMessages[recentMessages.length - 1]?.content || "Unknown question";
